@@ -1,0 +1,67 @@
+# Lộ trình tự học ECG – mỗi bài = 1 video 45–75s.
+# rhythm: kiểu sóng để vẽ (xem ecgtok/ecg.py RHYTHMS). lead: chuyển đạo hiển thị.
+lessons:
+  - {id: 1, title: "Giấy điện tâm đồ đọc thế nào?", rhythm: normal, lead: DII, hr: 75, highlight: rr,
+     points: ["Tốc độ giấy chuẩn 25 mm/s", "1 ô nhỏ = 1 mm = 0,04 s; 1 ô lớn = 5 ô nhỏ = 0,2 s", "Biên độ chuẩn 10 mm = 1 mV, 1 ô nhỏ = 0,1 mV"]}
+  - {id: 2, title: "Sóng P, phức bộ QRS, sóng T là gì?", rhythm: normal, lead: DII, hr: 70, highlight: qrs,
+     points: ["P = khử cực nhĩ", "QRS = khử cực thất", "T = tái cực thất", "Tái cực nhĩ bị che trong QRS"]}
+  - {id: 3, title: "Tính nhịp tim trong 5 giây", rhythm: normal, lead: DII, hr: 75, highlight: rr,
+     points: ["Nhịp đều: 300 chia số ô lớn giữa 2 sóng R", "Chính xác hơn: 1500 chia số ô nhỏ", "Nhịp không đều: đếm QRS trong 6 giây nhân 10"]}
+  - {id: 4, title: "Nhịp xoang bình thường", rhythm: normal, lead: DII, hr: 75, highlight: p,
+     points: ["Có sóng P trước mỗi QRS, QRS sau mỗi P", "P dương ở DII, âm ở aVR", "Tần số 60–100 lần/phút, đều"]}
+  - {id: 5, title: "Khoảng PR – bao nhiêu là bình thường?", rhythm: normal, lead: DII, hr: 72, highlight: pr,
+     points: ["Đo từ đầu sóng P đến đầu QRS", "Bình thường 0,12–0,20 s (3–5 ô nhỏ)", "PR dài: block AV; PR ngắn: nghĩ tới tiền kích thích"]}
+  - {id: 6, title: "QRS hẹp hay rộng?", rhythm: normal, lead: DII, hr: 72, highlight: qrs,
+     points: ["QRS bình thường < 0,12 s (dưới 3 ô nhỏ)", "QRS ≥ 0,12 s: block nhánh, nhịp thất, tăng kali, WPW…", "QRS hẹp = xung đi qua hệ dẫn truyền bình thường"]}
+  - {id: 7, title: "Khoảng QT và QTc", rhythm: long_qt, lead: DII, hr: 70, highlight: qt,
+     points: ["Đo từ đầu QRS đến cuối sóng T", "Hiệu chỉnh theo nhịp: Bazett QTc = QT / căn bậc hai RR", "QTc dài khi > 450 ms ở nam, > 460 ms ở nữ; > 500 ms nguy cơ xoắn đỉnh"]}
+  - {id: 8, title: "Xác định trục điện tim nhanh", rhythm: normal, lead: DI, hr: 72, highlight: qrs,
+     points: ["Nhìn QRS ở DI và aVF", "Cùng dương: trục bình thường", "DI dương, aVF âm: lệch trái (kiểm tra thêm DII)", "DI âm, aVF dương: lệch phải"]}
+  - {id: 9, title: "Nhịp chậm xoang", rhythm: brady, lead: DII, hr: 48, highlight: rr,
+     points: ["Nhịp xoang nhưng < 60 lần/phút", "Có thể sinh lý ở vận động viên, khi ngủ", "Nguyên nhân: thuốc chẹn beta, suy giáp, bệnh nút xoang"]}
+  - {id: 10, title: "Nhịp nhanh xoang", rhythm: tachy, lead: DII, hr: 120, highlight: p,
+     points: ["Nhịp xoang > 100 lần/phút", "Vẫn có P trước mỗi QRS", "Tìm nguyên nhân: sốt, đau, mất nước, thiếu máu, cường giáp"]}
+  - {id: 11, title: "Rung nhĩ – loạn nhịp hay gặp nhất", rhythm: af, lead: DII, hr: 110, highlight: rr,
+     points: ["Không có sóng P, thay bằng sóng f lăn tăn", "Khoảng RR không đều hoàn toàn", "Nguy cơ đột quỵ – cần đánh giá chống đông (CHA2DS2-VASc)"]}
+  - {id: 12, title: "Cuồng nhĩ – hình răng cưa", rhythm: flutter, lead: DII, hr: 150, highlight: p,
+     points: ["Sóng F răng cưa rõ ở DII, DIII, aVF", "Tần số nhĩ khoảng 300 lần/phút", "Dẫn 2:1 cho nhịp thất khoảng 150 – nhịp 150 đều thì nghĩ tới cuồng nhĩ"]}
+  - {id: 13, title: "Ngoại tâm thu nhĩ", rhythm: pac, lead: DII, hr: 75, highlight: p,
+     points: ["Nhát đến sớm, có sóng P khác hình dạng", "QRS thường hẹp giống nhát cơ bản", "Nghỉ bù không hoàn toàn"]}
+  - {id: 14, title: "Ngoại tâm thu thất", rhythm: pvc, lead: DII, hr: 75, highlight: qrs,
+     points: ["Nhát đến sớm, QRS rộng dị dạng, không có P đi trước", "ST–T ngược hướng với QRS", "Thường có nghỉ bù hoàn toàn"]}
+  - {id: 15, title: "Block nhĩ thất độ 1", rhythm: avb1, lead: DII, hr: 70, highlight: pr,
+     points: ["PR > 0,20 s (hơn 1 ô lớn)", "PR dài cố định, mọi P đều dẫn xuống thất", "Thường lành tính, theo dõi thuốc làm chậm dẫn truyền"]}
+  - {id: 16, title: "Block AV độ 2 Mobitz I (Wenckebach)", rhythm: wenckebach, lead: DII, hr: 70, highlight: pr,
+     points: ["PR dài dần qua từng nhịp", "Đến khi một sóng P không dẫn – rớt QRS", "Chu kỳ lặp lại; thường block tại nút AV"]}
+  - {id: 17, title: "Block AV độ 2 Mobitz II", rhythm: mobitz2, lead: DII, hr: 75, highlight: p,
+     points: ["PR cố định, không dài dần", "Đột ngột một sóng P không dẫn", "Nguy cơ tiến triển block độ 3 – thường cần máy tạo nhịp"]}
+  - {id: 18, title: "Block AV độ 3 – phân ly nhĩ thất", rhythm: avb3, lead: DII, hr: 38, highlight: p,
+     points: ["P và QRS đi độc lập, mỗi bên đều theo nhịp riêng", "Tần số nhĩ nhanh hơn tần số thất", "Nhịp thoát chậm – cấp cứu, thường cần tạo nhịp"]}
+  - {id: 19, title: "Block nhánh phải", rhythm: rbbb, lead: V1, hr: 72, highlight: qrs,
+     points: ["QRS ≥ 0,12 s", "V1: hình rSR' – 'tai thỏ'", "V6 và DI: sóng S rộng, trát đậm"]}
+  - {id: 20, title: "Block nhánh trái", rhythm: lbbb, lead: V6, hr: 72, highlight: qrs,
+     points: ["QRS ≥ 0,12 s", "V6, DI: R rộng có khía, không có q", "V1: QS hoặc rS sâu; ST–T ngược hướng QRS"]}
+  - {id: 21, title: "Nhịp nhanh kịch phát trên thất (SVT)", rhythm: svt, lead: DII, hr: 180, highlight: qrs,
+     points: ["QRS hẹp, đều, thường 150–250 lần/phút", "Thường không thấy rõ sóng P", "Xử trí ban đầu: nghiệm pháp phế vị, adenosine nếu ổn định"]}
+  - {id: 22, title: "Nhịp nhanh thất", rhythm: vt, lead: DII, hr: 170, highlight: qrs,
+     points: ["QRS rộng ≥ 0,12 s, đều, > 100 lần/phút", "Có thể thấy phân ly nhĩ thất, nhát bắt được, nhát hỗn hợp", "QRS rộng nhịp nhanh: coi là nhanh thất đến khi chứng minh ngược lại"]}
+  - {id: 23, title: "Rung thất – ngừng tuần hoàn", rhythm: vf, lead: DII, hr: 0, highlight: none,
+     points: ["Sóng hỗn loạn, không nhận ra P, QRS, T", "Không có mạch – ngừng tuần hoàn", "Ép tim ngay và sốc điện càng sớm càng tốt"]}
+  - {id: 24, title: "Nhồi máu cơ tim ST chênh lên (STEMI)", rhythm: stemi, lead: DII, hr: 85, highlight: st,
+     points: ["ST chênh lên ở ≥ 2 chuyển đạo liên tiếp", "Ngưỡng ≥ 1 mm; riêng V2–V3 ngưỡng cao hơn (≥ 1,5–2,5 mm tùy giới, tuổi)", "Thời gian là cơ tim – cần tái thông mạch vành khẩn"]}
+  - {id: 25, title: "Định khu nhồi máu theo chuyển đạo", rhythm: stemi, lead: DIII, hr: 80, highlight: st,
+     points: ["Thành dưới: DII, DIII, aVF – thường động mạch vành phải", "Thành trước: V1–V4 – động mạch liên thất trước", "Thành bên: DI, aVL, V5, V6 – thường động mạch mũ"]}
+  - {id: 26, title: "ST chênh xuống và T âm", rhythm: st_depression, lead: V5, hr: 90, highlight: st,
+     points: ["ST chênh xuống nằm ngang hoặc dốc xuống ≥ 0,5 mm gợi ý thiếu máu", "Cũng gặp do digoxin, phì đại thất, soi gương STEMI", "Luôn so sánh với ECG cũ và lâm sàng"]}
+  - {id: 27, title: "Tăng kali máu trên ECG", rhythm: hyperk, lead: V3, hr: 70, highlight: t,
+     points: ["Sớm: sóng T cao, nhọn, đáy hẹp", "Nặng hơn: PR dài, P dẹt, QRS rộng", "Rất nặng: dạng sóng sin, nguy cơ ngừng tim – cấp cứu"]}
+  - {id: 28, title: "Hạ kali máu trên ECG", rhythm: hypok, lead: V3, hr: 72, highlight: t,
+     points: ["Sóng T dẹt", "Xuất hiện sóng U rõ sau T", "ST chênh xuống nhẹ, QU kéo dài"]}
+  - {id: 29, title: "Phì đại thất trái", rhythm: lvh, lead: V5, hr: 72, highlight: qrs,
+     points: ["Sokolow–Lyon: S ở V1 + R ở V5 hoặc V6 ≥ 35 mm", "Có thể kèm ST chênh xuống, T âm dạng 'strain'", "Nguyên nhân thường gặp: tăng huyết áp, hẹp van động mạch chủ"]}
+  - {id: 30, title: "Hội chứng WPW", rhythm: wpw, lead: DII, hr: 75, highlight: pr,
+     points: ["PR ngắn < 0,12 s", "Sóng delta – sườn lên QRS thoai thoải", "QRS rộng; có đường dẫn truyền phụ"]}
+  - {id: 31, title: "Viêm màng ngoài tim cấp", rhythm: pericarditis, lead: DII, hr: 95, highlight: st,
+     points: ["ST chênh lên lan tỏa, dạng lõm", "PR chênh xuống (trừ aVR)", "Không có hình ảnh soi gương như STEMI"]}
+  - {id: 32, title: "Đọc ECG theo 8 bước", rhythm: normal, lead: DII, hr: 75, highlight: none,
+     points: ["Nhịp – tần số – trục", "Sóng P – PR – QRS", "ST – T – QT", "Kết luận và so sánh với lâm sàng"]}

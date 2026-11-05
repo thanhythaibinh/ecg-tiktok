@@ -1,0 +1,20 @@
+channel:
+  name: "ECG Tự Học"
+  handle: "@ecgtuhoc"
+  disclaimer: "Nội dung giáo dục – không thay thế chẩn đoán của bác sĩ"
+llm:
+  model: claude-opus-5-5
+  effort: medium
+tts:
+  voice: vi-VN-HoaiMyNeural   # hoặc vi-VN-NamMinhNeural
+  rate: "+8%"
+video:
+  width: 1080
+  height: 1920
+  fps: 30
+  music: ""                   # đường dẫn mp3 nhạc nền (tùy chọn)
+  music_volume: 0.08
+publish:
+  auto_post: false            # true = tự đăng qua TikTok API
+  privacy: SELF_ONLY          # app chưa audit chỉ đăng được SELF_ONLY
+  per_run: 1                  # số video mỗi lần chạy
