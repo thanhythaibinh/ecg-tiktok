@@ -104,8 +104,12 @@ def main():
     ap.add_argument("--count", type=int)
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--post", action="store_true")
+    ap.add_argument("--dry-run", action="store_true", help="không ghi state.json (dùng cho CI)")
+    ap.add_argument("--require-llm", action="store_true", help="dừng nếu thiếu ANTHROPIC_API_KEY")
     a = ap.parse_args()
 
+    if a.require_llm and not a.offline and not os.environ.get("ANTHROPIC_API_KEY"):
+        raise SystemExit("Thiếu ANTHROPIC_API_KEY – thêm secret trong GitHub: Settings → Secrets → Actions")
     cfg = yaml.safe_load((ROOT / "config.yaml").read_text())
     lessons = yaml.safe_load((ROOT / "curriculum.yaml").read_text())["lessons"]
     state = load_state()
@@ -118,7 +122,8 @@ def main():
         return
     for l in todo:
         state["done"][str(l["id"])] = make_lesson(l, lessons, cfg, not a.offline, a.post)
-        STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2))
+        if not a.dry_run:
+            STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
